@@ -12,6 +12,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+    image: danishyousuf/node
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/mydatabase
       - PORT=3004
