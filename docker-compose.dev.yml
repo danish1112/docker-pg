@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  nginx:
+    ports:
+      - "3004:80"
+  app:
+    volumes:
+      - .:/app
+      - /app/node_modules # To avoid overwriting node_modules in the container
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgres://postgres:password@db:5432/mydatabase
+      - PORT=3004
+    command: npm run dev # Assuming you're using nodemon for development
+
+  db:
+    ports:
+      - "5432:5432"
