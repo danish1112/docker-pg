@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.get('/healthcheck', (req, res) => {
-    console.log("here!!!!!");
+    console.log("here!!!!! dpfev");
     res.status(200).json({message : "health is okay"})
 });
 
