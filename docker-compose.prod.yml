@@ -5,6 +5,8 @@ services:
     ports:
       - "3004:80"
   app:
+    build: 
+      context: .
     environment:
       - NODE_ENV=production
       - DATABASE_URL=postgres://postgres:password@db:5432/mydatabase
